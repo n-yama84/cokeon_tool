@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coke ON クーポン</title>
+</head>
+<body>
+  <p id="message">アプリを起動しています…</p>
+
+  <script>
+    // URLパラメータ取得
+    const params = new URLSearchParams(window.location.search);
+    const coupon = params.get("coupon");
+
+    if (coupon) {
+      // Coke ON アプリ起動URL
+      const appUrl =
+        "com.coke.cokeon://?screenName=CouponcodeCampaign&couponcode="
+        + encodeURIComponent(coupon);
+
+      // アプリ起動
+      window.location.href = appUrl;
+
+      // アプリ未インストール時の保険メッセージ
+      setTimeout(() => {
+        document.getElementById("message").innerHTML =
+          "アプリが起動しない場合は、Coke ONアプリがインストールされているか確認してください。";
+      }, 1500);
+    } else {
+      document.getElementById("message").innerText =
+        "クーポンコードが見つかりません。";
+    }
+  </script>
+</body>
+</html>
