@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Coke ON 起動</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <p>アプリを起動しています…</p>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const coupon = params.get("coupon");
+
+    if (coupon) {
+      location.href =
+        "com.coke.cokeon://?screenName=CouponcodeCampaign&couponcode=" + coupon;
+    } else {
+      document.body.innerHTML = "クーポン情報が見つかりません。";
+    }
+  </script>
+</body>
+</html>
