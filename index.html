@@ -6,7 +6,7 @@
   <title>Coke ON アプリ チケット取得画面遷移ツール</title>
 </head>
 <body>
-  <p id="message1">Coke ON アプリ チケット取得画面遷移ツールです</p>
+  <p id="message1">CokeONアプリ チケット取得画面遷移ツール</p>
   <p id="message2">アプリを起動しています…</p>
 
   <script>
@@ -25,11 +25,11 @@
 
       // アプリ未インストール時の保険メッセージ
       setTimeout(() => {
-        document.getElementById("message").innerHTML =
+        document.getElementById("message2").innerHTML =
           "アプリが起動しない場合は、Coke ONアプリがインストールされているか確認してください。";
       }, 1500);
     } else {
-      document.getElementById("message").innerText =
+      document.getElementById("message2").innerText =
         "クーポンコードが見つかりません。";
     }
   </script>
